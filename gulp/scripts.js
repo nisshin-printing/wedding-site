@@ -21,14 +21,11 @@ let gulp = require('gulp'),
  */
 gulp.task('preJs', () => {
 		gulp.src(config.path.js.src)
-				.pipe($.plumber({
-						errorHandler: $.notify.onError('<%= error.message %>')
-				}))
-				.pipe($.uglify())
-				.pipe($.rename({
-						extname: '.min.js'
-				}))
-				.pipe($.sourcemaps.write(config.js.sourcemaps))
-				.pipe(gulp.dest(config.path.js.dest))
+
+		.pipe($.plumber())
+
+		.pipe($.uglify())
+
+		.pipe(gulp.dest(config.path.js.dest))
 				.pipe($.browser.reload({ stream: true }));
 })

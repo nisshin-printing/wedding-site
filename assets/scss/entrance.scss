@@ -1,0 +1,68 @@
+main {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		background: url(../img/bg--entrance.jpg) no-repeat 50% 50%;
+		background-size: cover;
+		overflow-x: hidden;
+}
+
+.photo--title {
+		margin: 5rem 0 3rem;
+}
+
+.button--entrance {
+		a {
+				margin: 0 1rem;
+				padding: 2rem 4rem;
+				color: #FFF;
+				display: inline-block;
+				border-radius: 3px;
+				transition: background-color 0.25s ease-out;
+				box-shadow: 0 0 100px 0 rgba(#FFF, .15);
+				position: relative;
+				@media screen and (max-width: 40em) {
+						padding: .5rem 1rem;
+				}
+				&.button--man {
+						background-color: #2E3192;
+						border: 1px solid #2E3192;
+						&:hover {
+								background-color: darken(#2E3192, 10%);
+								border-color: darken(#2E3192, 10%);
+						}
+						&::after {
+								@media screen and (min-width: 64em) {
+										content: url(../img/groom.png);
+										display: block;
+										position: absolute;
+										right: -10%;
+										bottom: -25%;
+								}
+						}
+				}
+				&.button--woman {
+						background-color: #D4145A;
+						border: 1px solid #D4145A;
+						&:hover {
+								background-color: darken(#D4145A, 10%);
+								border-color: darken(#D4145A, 10%);
+						}
+						&::after {
+								@media screen and (min-width: 64em) {
+										content: url(../img/bride.png);
+										display: block;
+										position: absolute;
+										left: -10%;
+										bottom: -25%;
+								}
+						}
+				}
+		}
+}
+
+.button--entrance a,
+.button--entrance a:hover,
+.button--entrance a:focus {
+		text-decoration: none;
+}

@@ -10,8 +10,8 @@
  *
  */
 
-$p_assets: '../';
+$p_assets: './assets/';
 $p_images: $p_assets+'img/';
 $p_fonts: $p_assets+'fonts/';
 $p_svg: $p_assets+'svg/';
-$p_sprite: $p_assets+'svg/sprite-icon.svg#';
+$p_sprite: $p_assets+'svg/sprite.svg#';

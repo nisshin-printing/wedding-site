@@ -7,6 +7,29 @@ module.exports = {
 		IS_PRODUCTION: false,
 		dist: 'public',
 		autoTest: false,
+		options: {
+				svgmin: {
+						multipass: true,
+						plugins: [
+								{ cleanupIDs: false },
+								{ removeAttrs: { attrs: 'fill' } }
+						]
+				},
+				svgSprite: {
+						mode: {
+								inline: true,
+								symbol: {
+										dest: '.',
+										sprite: 'sprite.svg'
+								}
+						},
+						shape: {
+								id: {
+										geneartor: 'icon-%s'
+								}
+						}
+				}
+		},
 		ejs: {
 				minify: {
 						collapseWhitespace: true,
@@ -77,12 +100,12 @@ module.exports = {
 						dest: 'build/assets/css'
 				},
 				svg: {
-						src: 'assets/svg/**/*.svg',
-						watch: 'assets/svg/**/*.svg',
+						src: 'assets/svg/sprite/*.svg',
+						watch: 'assets/svg/sprite/*.svg',
 						dest: 'build/assets/svg'
 				},
 				js: {
-						src: ['assets/js/*.js', '!assets/js/src/**/*'],
+						src: ['assets/js/*.js', '!assets/js/_*.js'],
 						watch: 'assets/js/**/*.js',
 						dest: 'build/assets/js'
 				},
@@ -92,4 +115,4 @@ module.exports = {
 						dest: 'build/assets/img/'
 				}
 		}
-};
+}
