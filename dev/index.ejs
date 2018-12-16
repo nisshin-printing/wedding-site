@@ -1,0 +1,16 @@
+<%
+'use strict';
+const path = {
+	home: 'https://wedding.dtdsh.com/',
+	css: 'assets/css/',
+	svg: 'assets/svg/svg.svg#',
+	js: 'assets/js/',
+	img: 'assets/img/',
+};
+const data = include('./data.json');
+const json = JSON.parse(data);
+%>
+		<%- include('_head', {path, json}); %>
+				<main>
+				</main>
+				<%- include('_foot', {path, json}); %>
