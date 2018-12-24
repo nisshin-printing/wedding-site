@@ -1,0 +1,70 @@
+.title--page {
+		margin: 5rem auto;
+}
+
+.flow--images {
+		display: flex;
+		align-items: flex-start;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		max-width: 100%;
+		margin: 0 auto;
+}
+
+.row {
+		text-align: center;
+}
+
+.bg--black {
+		max-width: 100px;
+		height: 100px;
+		background-color: #000;
+		margin: 0 auto;
+}
+
+.thank {
+		.text-left {
+				line-height: 2;
+		}
+		.text-right {
+				font-size: 2em;
+		}
+}
+
+.button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		color: #FFF;
+		background: #000;
+		transition: all 1s ease;
+		border-radius: 3px;
+		&:hover,
+		&:focus {
+				color: #FFF;
+				background: rgba(#000, .8);
+				transition: all 2s .5s;
+		}
+}
+
+.cta .button {
+		padding: 2rem 4rem;
+		background: #B24592;
+		background: linear-gradient(to right, #F15F79, #B24592);
+		border-radius: 5px;
+		transition: background 1s ease;
+		&:hover,
+		&:focus {
+				background: #F15F79;
+				background: linear-gradient(to left, #F15F79, #B24592);
+				transition: background 2s .5s;
+		}
+		&.secondary {
+				background: #DDD;
+				color: #000;
+				&:hover,
+				&:focus {
+						background: rgba(#DDD, .15)
+				}
+		}
+}

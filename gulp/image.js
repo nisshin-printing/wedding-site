@@ -16,15 +16,14 @@ gulp.task('image:prod', () => {
 						progressive: true,
 						interlaced: true
 				}))
-				.pipe(gulp.dest(config.path.image.dest))
-				.pipe($.browser.stream());
+				.pipe(gulp.dest(config.path.image.dest));
 });
 
 gulp.task('image:dev', () => {
 		return gulp.src(config.path.image.src)
-				.pipe($.plumber({
-						errorHandler: $.notify.onError('<%= error.message %>')
-				}))
-				.pipe(gulp.dest(config.path.image.dest))
-				.pipe($.browser.stream());
+				.pipe($.plumber())
+
+		.pipe(gulp.dest(config.path.image.dest))
+
+		.pipe($.browser.stream());
 });

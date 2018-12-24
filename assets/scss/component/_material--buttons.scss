@@ -1,0 +1,57 @@
+.button--floating {
+		border: none;
+		border-radius: 50%;
+		display: inline-block;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 16px;
+		text-transform: uppercase;
+		vertical-align: middle;
+		-webkit-tap-highlight-color: transparent;
+		text-decoration: none;
+		color: #FFF;
+		background-color: red;
+		transition: background-color .2s ease-out;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+		&:hover {
+				box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+		}
+		&::before {
+				border-radius: 0;
+		}
+		i,
+		svg {
+				font-size: 14px;
+				line-height: inherit;
+		}
+}
+
+.button--action {
+		position: fixed;
+		right: 23px;
+		bottom: 23px;
+		padding-top: 15px;
+		margin-bottom: 0;
+		z-index: 10;
+		padding: 0 0 0 15px;
+		ul {
+				position: absolute;
+				margin: 0;
+				visibility: hidden;
+				text-align: right;
+				bottom: 64px;
+				right: 64px;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 100%;
+				left: auto;
+				li {
+						display: inline-block;
+						margin: 7.5px 15px 0 0;
+						opacity: 0;
+				}
+		}
+		&.js--active ul {
+				visibility: visible;
+		}
+}

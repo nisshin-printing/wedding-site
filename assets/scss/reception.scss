@@ -1,23 +1,12 @@
 main {
-		width: 100vw;
-		height: 100%;
+		width: 100%;
 		position: relative;
 		background-color: #FFE0CF;
 		overflow-x: hidden;
 }
 
 .title--page {
-		margin: 1rem 2rem;
 		position: absolute;
-		&::after {
-				position: absolute;
-				content: '';
-				width: .8em;
-				height: 3px;
-				bottom: -.5em;
-				left: 0;
-				background-color: #8a8a8a;
-		}
 }
 
 .recep--images {
@@ -28,9 +17,10 @@ main {
 .recep--table {
 		position: relative;
 		background-color: #FFF;
-		width: 80%;
-		height: 100%;
+		width: 80vw;
+		height: 40vh;
 		margin: 0 auto;
+		padding-bottom: 1rem;
 		&::before,
 		&::after {
 				content: '';
@@ -56,14 +46,4 @@ main {
 				top: 0;
 				left: 100%;
 		}
-}
-
-.button-group {
-		width: 80vw;
-		height: 40vh;
-		padding-bottom: 1rem;
-}
-
-.button--circle {
-		vertical-align: bottom;
 }

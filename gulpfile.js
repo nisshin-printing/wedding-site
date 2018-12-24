@@ -15,7 +15,7 @@ let tasks = require('./gulp/load'),
 gulp.task('watch', () => {
 		gulp.watch(config.path.ejs.watch, ['html']);
 		gulp.watch(config.path.style.watch, ['style']);
-		gulp.watch(config.path.js.watch, ['preJs']);
+		gulp.watch(config.path.js.watch, ['script:dev']);
 		gulp.watch(config.path.svg.watch, ['svg']);
 		gulp.watch(config.path.image.watch, ['image:dev']);
 });
@@ -24,7 +24,7 @@ gulp.task('watch', () => {
  * build タスク
  */
 gulp.task('build', ['clean'], (callback) => {
-		return runSequence(['html', 'style', 'preJs', 'svg', 'image:prod', 'copy'], callback);
+		return runSequence(['html', 'style', 'script:prod', 'svg', 'image:prod', 'copy'], callback);
 });
 
 /**

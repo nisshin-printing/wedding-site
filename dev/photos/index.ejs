@@ -9,37 +9,32 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>Welcome To Our Wedding!! - 日進印刷の社長が結婚しました。</title>
 				<link rel="stylesheet" href="../assets/css/main.css">
-				<link rel="stylesheet" href="../assets/css/reception.css">
+				<link rel="stylesheet" href="../assets/css/photos.css">
+				<link rel="stylesheet" href="../assets/css/luminous.css" aync>
 </head>
 
 <body>
+		<div id="js--loading" class="is--loading">
+				<div class="loader"></div>
+		</div>
 		<main>
-				<h1 class="title--page">受付</h1>
-				<div class="recep--images text-center row align-bottom align-center">
-						<div class="column">
-								<img class="lazyload" alt="新郎福田一生側の受付イラスト" data-src="../assets/img/recep--man.png">
-						</div>
-						<div class="column">
-								<img class="lazyload" alt="新婦福田加奈側の受付イラスト" data-src="../assets/img/recep--woman.png">
-						</div>
+				<h1 class="title--page">すべての写真</h1>
+				<div id="macy--wrap" class="row uncollapse small-up-2 medium-up-3 large-up-4">
 				</div>
-				<div class="recep--table">
-						<div class="button-group text-center row align-bottom align-center">
-								<div class="column">
-										<a href="../photos" class="button--circle --third"><img class="lazyload" alt="写真だけ見る" data-src="../assets/img/recep--third.png"></a>
-								</div>
-								<div class="column">
-										<a href="../flow" class="button--circle --main"><img class="lazyload" alt="入場する" data-src="../assets/img/recep--main.png"></a>
-								</div>
-								<div class="column">
-										<a href="http://amzn.asia/2wszS2W" target="_blank" class="button--circle --sub"><img class="lazyload" alt="ご祝儀を渡す" data-src="../assets/img/recep--sub.png"></a>
-								</div>
+
+				<div class="hr row align-center cta">
+						<div class="column">
+								<p class="text-center">
+										<a href="https://amzn.asia/2wszS2W" target="_blank" class="button"><img src="../assets/img/money.png"></a>
+								</p>
 						</div>
+
 				</div>
 		</main>
-		<footer></footer>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" aync></script>
-		<script src="../assets/js/lazysizes.js" aync></script>
+		<%- include('../_footer'); %>
+				<script src="../assets/js/lazysizes.js" aync></script>
+				<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+				<script src="../assets/js/photos.js" defer></script>
 </body>
 
 </html>

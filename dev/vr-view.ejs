@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+		<meta charset="UTF-8">
+		<script></script>
+		<% include('_prefetch'); %>
+				<meta http-equiv="X-UA-Compatible" content="IE=edge,chorme=1">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Welcome To Our Wedding!! - 日進印刷の社長が結婚しました。</title>
+</head>
+
+<body style="margin:0;padding:0;overflow:hidden;">
+		<div id="pano" style="margin:0;padding:0;overflow:hidden;"></div>
+		<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+		<script src="//ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js"></script>
+		<script src="./assets/js/OrbitControls.js"></script>
+		<script>
+				(function() {
+						var width = window.innerWidth;
+						var height = window.innerHeight;
+						// Get Query
+						var vrImage = getParam('image');
+
+						function getParam(name, url) {
+								if (!url) url = window.location.href;
+								name = name.replace(/[\[\]]/g, "\\$&");
+								var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+										results = regex.exec(url);
+								if (!results) return null;
+								if (!results[2]) return '';
+								return decodeURIComponent(results[2].replace(/\+/g, " "));
+						}
+						//scene
+						var scene = new THREE.Scene();
+						//mesh
+						var geometry = new THREE.SphereGeometry(5, 60, 40);
+						geometry.scale(-1, 1, 1);
+						var material = new THREE.MeshBasicMaterial({
+								map: THREE.ImageUtils.loadTexture('./assets/img/vr/' + vrImage + '.jpg')
+						});
+						sphere = new THREE.Mesh(geometry, material);
+						scene.add(sphere);
+						//camera
+						var camera = new THREE.PerspectiveCamera(100, width / height, 1, 100000);
+						camera.position.set(1, 0, 0.2);
+						camera.lookAt(sphere.position);
+						//render
+						var renderer = new THREE.WebGLRenderer();
+						renderer.setSize(width, height);
+						renderer.setClearColor({
+								color: 0x000000
+						});
+						document.getElementById('pano').appendChild(renderer.domElement);
+						renderer.render(scene, camera);
+						//control
+						var controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+						function render() {
+								requestAnimationFrame(render);
+								sphere.rotation.y += 0.1 * Math.PI / 180;
+								renderer.render(scene, camera);
+								controls.update();
+						}
+						render();
+				})();
+		</script>
+</body>
+
+</html>
